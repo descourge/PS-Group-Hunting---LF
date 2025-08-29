@@ -1,59 +1,38 @@
-# Lfaundez
+# Prueba Técnica: Módulo de Gestión de Productos (Luis Faúndez)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+Esta es mi solución para la prueba técnica de Desarrollador Frontend. Es una pequeña app en Angular para gestionar productos, permitiendo listar, agregar y eliminar productos.
 
-## Development server
+Para demostrar el flujo de datos completo, me tomé la libertad de hacer que **el formulario y todos los botones fueran 100% funcionales**, conectando la interfaz con la API simulada.
 
-To start a local development server, run:
+## Cómo Ejecutar el Proyecto
 
-```bash
-ng serve
-```
+1.  **Clonar:** `git clone https://github.com/descourge/PS-Group-Hunting---LF`
+2.  **Instalar:** `npm install`
+3.  **Iniciar API:** (En una terminal) `json-server --watch db.json`
+4.  **Iniciar App:** (En otra terminal) `ng serve`
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+La aplicación se abrirá en `http://localhost:4200`.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Checklist de Requisitos
 
-```bash
-ng generate component component-name
-```
+* [x] **Componentes Angular:** Se creó el componente principal `ProductDashboard` para manejar la vista y la lógica de los productos.
+* [x] **Tabla Funcional:** La tabla muestra `nombre`, `precio` y `stock`. El botón "Eliminar" es funcional.
+* [x] **Modal Funcional:** El botón "Agregar producto" abre un modal. **Decidí implementar la funcionalidad completa del formulario** para mostrar el ciclo POST de datos.
+* [x] **API Simulada:** Se usó `json-server` y `HttpClient` para las peticiones (`get`, `post`, `delete`), todo encapsulado en `ProductService`.
+* [x] **Diseño y Estilos:** El diseño es responsivo usando Bootstrap (Flexbox) y CSS Grid. Todos los estilos se manejaron con SCSS y variables para crear un tema coherente.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## Extras Implementados
 
-## Building
+Además de lo requerido, se completaron todos los puntos opcionales:
 
-To build the project run:
+* [x] **RxJS (Observables):** El flujo de datos es completamente reactivo, usando Observables y el pipe `async`.
+* [x] **NgBootstrap:** Utilizado para el modal.
+* [x] **Validación de Formulario:** El formulario de "Agregar" valida los campos `nombre`, `precio` y `stock`.
 
-```bash
-ng build
-```
+Comentarios adicionales: Había optado por utilizar TailwindCSS para este desarrollo, pero tuve problemas técnicos debido a que las versiones más modernas ya no son compatibles con SCSS. También agregué unos pequeños íconos que se generan utilizando la API de Dicebear.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+También añadí otras mejoras de UX como animaciones, notificaciones de éxito y un layout profesional con un tema de color basado en la página web de PS Grupo Hunting.

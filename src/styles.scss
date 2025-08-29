@@ -1,1 +1,132 @@
-@import 'bootstrap/scss/bootstrap';
+@import "bootstrap/scss/bootstrap";
+
+$primary-blue-violet: #4F46E5;
+$secondary-purple: #8B5CF6;
+$text-dark: #212529;
+$light-bg: #f8f9fa;
+$border-color: #dee2e6;
+
+html {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 0.8rem;
+  }
+  .modal {
+    display: flex !important;
+    align-items: center !important;
+    min-height: 100vh;
+  }
+
+  .modal-dialog {
+    margin: auto !important;
+  }
+}
+
+.footer-hunting {
+  background-color: $primary-blue-violet;
+}
+
+.header-hunting {
+  background: linear-gradient(90deg, #1A4490 0%, #B945BC 100%);
+  padding: 0.5rem 0;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  color: white !important;
+  font-weight: 600;
+}
+
+.header-logo {
+  height: 4rem;
+  margin-right: 1.5rem;
+}
+
+.btn-primary {
+  background-color: $secondary-purple !important;
+  border-color: $secondary-purple !important;
+  &:hover {
+    background-color: darken($secondary-purple, 10%) !important;
+    border-color: darken($secondary-purple, 10%) !important;
+  }
+}
+
+.table thead.thead-dark th {
+  background-color: $primary-blue-violet;
+  color: white;
+}
+
+.table-hover tbody tr:hover {
+  background-color: lighten($secondary-purple, 35%) !important;
+}
+
+.product-avatar {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 0.5rem;
+  background-color: #f1f1f1;
+  border: 1px solid #dee2e6;
+}
+
+.modal-body {
+  position: relative;
+  min-height: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.success-icon {
+  width: 5rem;
+}
+
+.success-icon svg circle {
+  fill: #25AE88;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes draw-check {
+  to { stroke-dashoffset: 0; }
+}
+
+.success-view {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.success-icon svg polyline {
+  stroke-dasharray: 35;
+  stroke-dashoffset: 35;
+  animation: draw-check 0.4s ease-out 0.3s forwards;
+}
+
+@keyframes fadeInRow {
+  from { opacity: 0; transform: translateY(1rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.table tbody tr {
+  animation: fadeInRow 0.5s ease-in-out;
+}
+
+@keyframes fadeInAlert {
+  from { opacity: 0; transform: translateY(-1rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-alert {
+  animation: fadeInAlert 0.4s ease-out forwards;
+}
